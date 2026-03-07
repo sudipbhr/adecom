@@ -55,8 +55,7 @@ function renderCards(products) {
         card.onclick = () => showDetail(p.id);
 
         const imgHtml = p.imageUrl
-            ? `<img class="card-img" src="${p.imageUrl}" alt="${p.name}"
-                    onerror="this.outerHTML='<div class=\\'card-img-placeholder\\'>${p.name.charAt(0)}</div>'">`
+            ? `<img class="card-img" src="${p.imageUrl}" alt="${p.name}">`
             : `<div class="card-img-placeholder">${p.name.charAt(0)}</div>`;
 
         card.innerHTML = `
