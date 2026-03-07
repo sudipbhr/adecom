@@ -7,7 +7,7 @@ public class ProductController : ControllerBase
 {
     private static readonly List<Product> products = new List<Product>  
     {
-        new Product { Id = 1, Name = "Laptop", Price = 999.99m, Description = "A high-performance laptop for work and play.", Category = "Electronics", ImageUrl = "https://example.com/laptop.jpg" },
+        new Product { Id = 1, Name = "Laptop", Price = 999.99m, Description = "A high-performance laptop for work and play.", Category = "Electronics", ImageUrl = "https://www.zdnet.com/a/img/resize/5559b1594a6863de392970c57e6fbc49c5f3c24d/2025/04/04/38aac0c2-a5ac-4e4a-94c9-96bf7e8908d3/dsc05222.jpg?auto=webp&fit=crop&height=900&width=1200" },
         new Product { Id = 2, Name = "Smartphone", Price = 499.99m, Description = "A sleek smartphone with the latest features.", Category = "Electronics", ImageUrl = "https://example.com/smartphone.jpg" },
         new Product { Id = 3, Name = "Headphones", Price = 199.99m, Description = "Noise-cancelling headphones for immersive sound.", Category = "Audio", ImageUrl = "https://example.com/headphones.jpg" },
         new Product { Id = 4, Name = "Coffee Maker", Price = 79.99m, Description = "Brew the perfect cup of coffee every morning.", Category = "Home Appliances", ImageUrl = "https://example.com/coffeemaker.jpg" },
