@@ -15,12 +15,6 @@ public class AppDbContext : DbContext
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseNpgsql(
-            "Host=localhost;Port=5432;Database=ProductDB;Username=sushil;Password=password"
-        );
-    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
