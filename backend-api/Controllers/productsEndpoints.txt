@@ -1,0 +1,90 @@
+CustomersController (/api/customers)
+GET /api/customers → List all customers
+GET /api/customers/{id} → Get customer by id
+GET /api/customers/{id}/orders → Orders of customer
+POST /api/customers → Create customer
+PUT /api/customers/{id} → Update customer
+DELETE /api/customers/{id} → Delete customer
+POST /api/customers/bulk → Bulk insert customers
+GET /api/customers/with-orders → Customers with orders
+GET /api/customers/count → Total customers
+GET /api/customers/full-details → Customer + Orders + OrderItems + Products
+
+
+-------------------------------------------------------------------------------
+
+OrdersController (/api/orders)
+GET /api/orders → List all orders with item count
+GET /api/orders/{id} → Get order with items
+GET /api/orders/{id}/items → Get order items only
+GET /api/orders/{id}/customer → Customer of order
+POST /api/orders → Create order with/without items
+POST /api/orders/{id}/items → Add item to existing order
+PUT /api/orders/{id} → Update order (replace items)
+DELETE /api/orders/{id} → Delete order
+POST /api/orders/bulk → Bulk insert orders
+GET /api/orders/with-details → Order + Customer + Items + Product
+GET /api/orders/count → Total orders
+GET /api/orders/total-amount → Sum(order amount)
+GET /api/orders/top-customers → Customers with highest order count
+
+-------------------------------------------------------------------------------
+
+
+ProductsController (/api/products)
+GET /api/products → List all products
+GET /api/products/{id} → Get product by id
+GET /api/products/{id}/supplier → Supplier of product
+GET /api/products/{id}/category → Category of product
+POST /api/products → Create product
+PUT /api/products/{id} → Update product
+DELETE /api/products/{id} → Delete product
+POST /api/products/bulk → Bulk insert products
+GET /api/products/with-details → Product + Category + Supplier
+GET /api/products/count → Total products
+GET /api/products/high-price?minPrice=100 → Products price > X
+PUT /api/products/bulk-update-price → Update multiple product prices
+
+
+-------------------------------------------------------------------------------
+
+SuppliersController (/api/suppliers)
+GET /api/suppliers → List all suppliers
+GET /api/suppliers/{id} → Get supplier by id
+POST /api/suppliers → Create supplier
+PUT /api/suppliers/{id} → Update supplier
+DELETE /api/suppliers/{id} → Delete supplier
+POST /api/suppliers/bulk → Bulk insert suppliers
+GET /api/suppliers/products → Suppliers with products
+GET /api/suppliers/count → Total suppliers
+GET /api/suppliers/distinct-domain → Unique supplier email domains
+GET /api/suppliers/product-count → Number of products per supplier
+
+
+-------------------------------------------------------------------------------
+
+OrderItemsController (/api/orderitems)
+GET /api/orderitems → List all order items
+POST /api/orderitems → Add product to order
+DELETE /api/orderitems → Remove product from order (orderId, productId)
+POST /api/orderitems/bulk → Bulk add order items
+GET /api/orderitems/full-details → Order + Product + Quantity + UnitPrice
+GET /api/orderitems/count → Total order item rows
+GET /api/orderitems/by-date?date=2026-03-28 → Filter by order date
+
+
+
+-------------------------------------------------------------------------------
+CategoriesController (/api/categories)
+GET /api/categories
+GET /api/categories/{id}
+POST /api/categories
+PUT /api/categories/{id}
+DELETE /api/categories/{id}
+POST /api/categories/bulk
+GET /api/categories/products
+GET /api/categories/count
+
+-------------------------------------------------------------------------------
+DashboardController (/api/dashboard)
+GET /api/dashboard/summary → total Categories, Suppliers, Products, Customers, Orders, OrderItems
