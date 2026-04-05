@@ -6,8 +6,8 @@ using WeatherAPI.DTOs;
 [Route("api/[controller]")]
 public class CategoriesController : ControllerBase
 {
-    private readonly AppDbContext _context;
-    public CategoriesController(AppDbContext context) => _context = context;
+private readonly AppDbContext _context;
+public CategoriesController(AppDbContext context) => _context = context;
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
@@ -17,23 +17,26 @@ public class CategoriesController : ControllerBase
             .ToListAsync();
         return Ok(categories);
     }
+    
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateCategoryDto dto)
+    {
+    var category = new Category { Name = dto.Name };
+    _context.Categories.Add(category);
+    await _context.SaveChangesAsync();
+    return CreatedAtAction(nameof(GetById), new { id = category.Id }, new CategoryDto { Id = category.Id, Name = category.Name });
+    }
 
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetById(int id)
     {
         var category = await _context.Categories.FindAsync(id);
         if (category == null) return NotFound();
+        // return Ok(category);
         return Ok(new CategoryDto { Id = category.Id, Name = category.Name });
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create(CreateCategoryDto dto)
-    {
-        var category = new Category { Name = dto.Name };
-        _context.Categories.Add(category);
-        await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetById), new { id = category.Id }, new CategoryDto { Id = category.Id, Name = category.Name });
-    }
+    
 
     [HttpPut("{id:int}")]
     public async Task<IActionResult> Update(int id, UpdateCategoryDto dto)
@@ -78,7 +81,7 @@ public class CategoriesController : ControllerBase
                     Id = p.Id,
                     Name = p.Name,
                     Price = p.Price,
-                    StockQty = p.StockQty
+                    Stock = p.Stock
                 }).ToList()
             })
             .ToListAsync();

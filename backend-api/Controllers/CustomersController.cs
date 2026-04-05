@@ -41,15 +41,15 @@ public class CustomersController : ControllerBase
         });
     }
 
-    [HttpGet("{id:int}/orders")]
-    public async Task<IActionResult> GetOrders(int id)
-    {
-        var exists = await _context.Customers.AnyAsync(c => c.Id == id);
-        if (!exists) return NotFound();
+    // [HttpGet("{id:int}/orders")]
+    // public async Task<IActionResult> GetOrders(int id)
+    // {
+    //     var exists = await _context.Customers.AnyAsync(c => c.Id == id);
+    //     if (!exists) return NotFound();
 
-        var orders = await _context.Orders.Where(o => o.CustomerId == id).ToListAsync();
-        return Ok(orders);
-    }
+    //     var orders = await _context.Orders.Where(o => o.CustomerId == id).ToListAsync();
+    //     return Ok(orders);
+    // }
 
     [HttpPost]
     public async Task<IActionResult> Create(CreateCustomerDto dto)

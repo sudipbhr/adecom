@@ -84,7 +84,7 @@ public class SuppliersController : ControllerBase
                     Id = p.Id,
                     Name = p.Name,
                     Price = p.Price,
-                    StockQty = p.StockQty
+                    Stock = p.Stock
                 }).ToList()
             })
             .ToListAsync();

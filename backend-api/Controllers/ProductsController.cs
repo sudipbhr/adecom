@@ -19,7 +19,7 @@ public class ProductsController : ControllerBase
                 Name = p.Name,
                 SKU = p.SKU,
                 Price = p.Price,
-                StockQty = p.StockQty,
+                Stock = p.Stock,
                 CategoryId = p.CategoryId,
                 SupplierId = p.SupplierId
             })
@@ -38,7 +38,7 @@ public class ProductsController : ControllerBase
             Name = product.Name,
             SKU = product.SKU,
             Price = product.Price,
-            StockQty = product.StockQty,
+            Stock = product.Stock,
             CategoryId = product.CategoryId,
             SupplierId = product.SupplierId
         });
@@ -70,7 +70,7 @@ public class ProductsController : ControllerBase
             Name = dto.Name,
             SKU = dto.SKU,
             Price = dto.Price,
-            StockQty = dto.StockQty,
+            Stock = dto.Stock,
             CategoryId = dto.CategoryId,
             SupplierId = dto.SupplierId
         };
@@ -82,7 +82,7 @@ public class ProductsController : ControllerBase
             Name = product.Name,
             SKU = product.SKU,
             Price = product.Price,
-            StockQty = product.StockQty,
+            Stock = product.Stock,
             CategoryId = product.CategoryId,
             SupplierId = product.SupplierId
         });
@@ -97,7 +97,7 @@ public class ProductsController : ControllerBase
         product.Name = dto.Name;
         product.SKU = dto.SKU;
         product.Price = dto.Price;
-        product.StockQty = dto.StockQty;
+        product.Stock = dto.Stock;
         product.CategoryId = dto.CategoryId;
         product.SupplierId = dto.SupplierId;
 
@@ -124,7 +124,7 @@ public class ProductsController : ControllerBase
             Name = dto.Name,
             SKU = dto.SKU,
             Price = dto.Price,
-            StockQty = dto.StockQty,
+            Stock = dto.Stock,
             CategoryId = dto.CategoryId,
             SupplierId = dto.SupplierId
         }).ToList();
@@ -143,7 +143,7 @@ public class ProductsController : ControllerBase
                 p.Name,
                 p.SKU,
                 p.Price,
-                p.StockQty,
+                p.Stock,
                 Category = new CategoryDto { Id = p.Category.Id, Name = p.Category.Name },
                 Supplier = new SupplierDto { Id = p.Supplier.Id, Name = p.Supplier.Name, Email = p.Supplier.Email, Phone = p.Supplier.Phone }
             })
@@ -166,7 +166,7 @@ public class ProductsController : ControllerBase
                 Name = p.Name,
                 SKU = p.SKU,
                 Price = p.Price,
-                StockQty = p.StockQty,
+                Stock = p.Stock,
                 CategoryId = p.CategoryId,
                 SupplierId = p.SupplierId
             })
