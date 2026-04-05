@@ -2,21 +2,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WeatherAPI.DTOs;
 
+
+public class CategoryDto
+{
+public int Id { get; set; }
+public string Name { get; set; } = string.Empty;
+}
+
+
 public class CreateCategoryDto
 {
-    [Required]
-    public string Name { get; set; } = string.Empty;
+[Required]
+public string Name { get; set; } = string.Empty;
 }
 
 public class UpdateCategoryDto
 {
     [Required]
-    public string Name { get; set; } = string.Empty;
-}
-
-public class CategoryDto
-{
-    public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
 }
 
