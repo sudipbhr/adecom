@@ -138,7 +138,7 @@ namespace WeatherAPI.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("StockQty")
+                    b.Property<int>("Stock")
                         .HasColumnType("integer");
 
                     b.Property<int>("SupplierId")

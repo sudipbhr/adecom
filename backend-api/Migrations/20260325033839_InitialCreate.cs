@@ -86,7 +86,7 @@ namespace WeatherAPI.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     SKU = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    StockQty = table.Column<int>(type: "integer", nullable: false),
+                    Stock = table.Column<int>(type: "integer", nullable: false),
                     CategoryId = table.Column<int>(type: "integer", nullable: false),
                     SupplierId = table.Column<int>(type: "integer", nullable: false)
                 },
