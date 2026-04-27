@@ -8,6 +8,9 @@ public class Product
    public decimal Price { get; set; }
    public int Stock { get; set; }
 
+   /// <summary>Relative URL path to the uploaded product image.</summary>
+   public string? ImageUrl { get; set; }
+
    // Many Products belong to one Category (M-to-1)
    public int CategoryId { get; set; }
    public Category Category { get; set; }
