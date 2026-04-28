@@ -50,3 +50,7 @@ package.json
 
 # 
 appsettings.json
+
+
+# staticfiles
+wwwroot/

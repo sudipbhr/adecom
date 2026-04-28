@@ -118,7 +118,7 @@ public class ProductsController : ControllerBase
             Stock      = dto.Stock,
             CategoryId = dto.CategoryId,
             SupplierId = dto.SupplierId,
-            // ImageUrl   = await SaveImageAsync(dto.Image)
+            ImageUrl   = await SaveImageAsync(dto.Image)
         };
         _context.Products.Add(product);
         await _context.SaveChangesAsync();

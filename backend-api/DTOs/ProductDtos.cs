@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace WeatherAPI.DTOs;
 
@@ -34,15 +35,14 @@ public class CreateProductDto
     public decimal Price { get; set; }
 
     public int Stock { get; set; }
-
     [Required]
     public int CategoryId { get; set; }
 
     [Required]
     public int SupplierId { get; set; }
 
-    /// <summary>Optional URL to the product image.</summary>
-    public string? ImageUrl { get; set; }
+    /// <summary>Optional product image file upload.</summary>
+    public IFormFile? Image { get; set; }
 }
 
 public class UpdateProductDto
@@ -65,8 +65,8 @@ public class UpdateProductDto
     [Required]
     public int SupplierId { get; set; }
 
-    /// <summary>Optional URL to the product image.</summary>
-    public string? ImageUrl { get; set; }
+    /// <summary>Optional product image file upload.</summary>
+    public IFormFile? Image { get; set; }
 }
 
 public class ProductDto
